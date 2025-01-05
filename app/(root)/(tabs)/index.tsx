@@ -9,7 +9,7 @@ export default function Index() {
 				justifyContent: "center",
 				alignItems: "center",
 			}}>
-			<Text className='font-bold text-lg my-10 text-red-400'>
+			<Text className='font-bold my-10  font-rubik text-3xl'>
 				Welcome to Restate
 			</Text>
 			<Link href='/sign-in'>Sign In</Link>
