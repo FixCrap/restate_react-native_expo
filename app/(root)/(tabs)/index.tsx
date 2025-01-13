@@ -15,7 +15,7 @@ import icons from "@/constants/icons";
 
 import Search from "@/components/Search";
 import Filters from "@/components/Filters";
-//import NoResults from "@/components/NoResults";
+import NoResults from "@/components/NoResults";
 import { Card, FeaturedCard } from "@/components/Cards";
 
 import { useAppwrite } from "@/lib/useAppwrite";
@@ -83,7 +83,7 @@ const Home = () => {
 							className='text-primary-300 mt-5'
 						/>
 					) : (
-						<View>No</View> //<NoResults />
+						<NoResults />
 					)
 				}
 				ListHeaderComponent={() => (
@@ -130,7 +130,7 @@ const Home = () => {
 									className='text-primary-300'
 								/>
 							) : !latestProperties || latestProperties.length === 0 ? (
-								<View>No</View> //	<NoResults />
+								<NoResults />
 							) : (
 								<FlatList
 									data={latestProperties}
