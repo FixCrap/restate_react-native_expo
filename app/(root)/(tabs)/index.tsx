@@ -1,5 +1,6 @@
 import {
 	ActivityIndicator,
+	Button,
 	FlatList,
 	Image,
 	Text,
@@ -14,12 +15,13 @@ import icons from "@/constants/icons";
 
 import Search from "@/components/Search";
 import Filters from "@/components/Filters";
-import NoResults from "@/components/NoResults";
+//import NoResults from "@/components/NoResults";
 import { Card, FeaturedCard } from "@/components/Cards";
 
 import { useAppwrite } from "@/lib/useAppwrite";
 import { useGlobalContext } from "@/lib/global-provider";
 import { getLatestProperties, getProperties } from "@/lib/appwrite";
+import seed from "@/lib/seed";
 
 const Home = () => {
 	const { user } = useGlobalContext();
@@ -57,6 +59,10 @@ const Home = () => {
 
 	return (
 		<SafeAreaView className='h-full bg-white'>
+			{/* <Button
+				title='Seed'
+				onPress={seed}
+			/> */}
 			<FlatList
 				data={properties}
 				numColumns={2}
@@ -77,7 +83,7 @@ const Home = () => {
 							className='text-primary-300 mt-5'
 						/>
 					) : (
-						<NoResults />
+						<View>No</View> //<NoResults />
 					)
 				}
 				ListHeaderComponent={() => (
@@ -124,7 +130,7 @@ const Home = () => {
 									className='text-primary-300'
 								/>
 							) : !latestProperties || latestProperties.length === 0 ? (
-								<NoResults />
+								<View>No</View> //	<NoResults />
 							) : (
 								<FlatList
 									data={latestProperties}
